@@ -1,0 +1,109 @@
+ from openpyxl import load_workbook
+#
+ myexcel=load_workbook(filename=r'D:\SANTHOSH\Batches\Batch130\scripts\test.xlsx')
+#
+ allsheetnames = myexcel.sheetnames
+# print(allsheetnames)
+#
+#
+# ### picking data from second sheet
+#
+# #mysheet = myexcel.active
+# mysheet = myexcel['Batch130']
+#
+#
+#
+# print("The active sheet name  = " , mysheet)
+# print("All the sheet names are = " , allsheetnames)
+#
+#
+#
+# rows=mysheet.max_row
+# cols=mysheet.max_column
+# print("rows = " , rows)
+# print("columns = " , cols)
+#
+#
+# n=[]
+# a=[]
+# s=[]
+# p=[]
+# w=[]
+# ph = []
+#
+#
+# rownum=1
+#
+# while(rows>0):
+#
+#     namestr='A'+str(rownum)
+#     agestr='B'+str(rownum)
+#     salstr='C'+str(rownum)
+#     placestr = 'D' + str(rownum)
+#     weightstr = 'E' + str(rownum)
+#     phonestr = 'F' + str(rownum)
+#
+#     NAME=mysheet[namestr].value
+#     AGE=mysheet[agestr].value
+#     SAL=mysheet[salstr].value
+#     PLACE = mysheet[placestr].value
+#     WEIGHT = mysheet[weightstr].value
+#     PHONE = mysheet[phonestr].value
+#
+#     n.append(NAME)
+#     a.append(AGE)
+#     s.append(SAL)
+#     p.append(PLACE)
+#     w.append(WEIGHT)
+#     ph.append(PHONE)
+#
+#     rows -=1
+#     rownum +=1
+#
+#
+# del n[0]
+# del a[0]
+# del s[0]
+# del p[0]
+# del w[0]
+# del ph[0]
+#
+# print("Names are=", n)
+# print("age are=", a)
+# print("salaries are=", s)
+# print("places are = " , p)
+# print("weights are = " , w)
+# print("phone nums are = " , ph)
+
+# print("data picking is complete ")
+#
+#
+#
+# print("appending the data to first sheet")
+#
+# mysheet = myexcel['first']
+#
+# rowpos = mysheet.max_row
+# rownum = rowpos + 1
+# listindex=0
+# rows = len(n)
+#
+# while (rows > 0):
+#     namestr = 'A' + str(rownum)
+#     agestr = 'B' + str(rownum)
+#     salstr = 'C' + str(rownum)
+#     placestr = 'D' + str(rownum)
+#     weightstr = 'E' + str(rownum)
+#
+#     mysheet[namestr] = n[listindex]
+#     mysheet[agestr] = a[listindex]
+#     mysheet[salstr] = s[listindex]
+#     mysheet[placestr] = p[listindex]
+#     mysheet[weightstr] = w[listindex]
+#
+#     rows -= 1
+#     rownum += 1
+#     listindex += 1
+#
+# myexcel.save(r'D:\SANTHOSH\Batches\Batch 126\scripts\test.xlsx')
+#print("complete")
