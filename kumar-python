@@ -1,0 +1,23 @@
+# python-sql 
+#create a program to get data from the sql tables 
+
+import pymysql as p
+db=p.connect(host="localhost",
+             user="root",
+             password="77021446",
+             db="kumar")
+
+mycursor=db.cursor()
+qurey=["select * from k_table",
+       "select count(*) from k_table",
+       '''select count(*) from k_table where branch='ece' ''']
+
+op=[]
+for q in qurey:
+    mycursor.execute(q)
+    d=mycursor.fetchall()
+    
+    op.append(d)
+for po in op:
+    print(po)
+    
