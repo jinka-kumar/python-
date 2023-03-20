@@ -1,0 +1,66 @@
+###write a program to create a sql table by using python
+
+
+
+ import pymysql as p
+#
+#
+# # Step 2 : connect to database
+ db = p.connect(host = 'localhost', user = 'root', password = 'root', db = 'world')
+# #db = p.connect(host = 'localhost', user = 'root', password = 'root', db = 'sys', port = num)
+#
+#
+ print("connected successfully")
+#
+#
+# # Step3  : create cursor
+ mycursor = db.cursor()
+#
+#
+#
+# ##### insert query
+#
+# # Step 4 : insert the data
+# #q1 = "INSERT INTO city (ID, NAME, CountryCode, District, Population) VALUES (4090, 'SWAROOP', 'IND', 'ALIA', 900000);"
+#
+ q1 = ["""
+ CREATE TABLE KUMARASWAMY (
+     PersonID int,
+     LastName varchar(255),
+     FirstName varchar(255),
+     Address varchar(255),
+     City varchar(255)
+ );
+ """,
+ """
+ CREATE TABLE DIVYABHARATHI (
+     PersonID int,
+     LastName varchar(255),
+     FirstName varchar(255),
+     Address varchar(255),
+     City varchar(255)
+ );
+ """
+#       ]
+#
+# # q1 = "drop table mia;"
+# #
+ q1 = [
+      "INSERT INTO city (ID, NAME, CountryCode, District, Population) VALUES (5001, 'LAKSHMI', 'IND', 'BENGALURU', 500000);", \
+       "INSERT INTO city (ID, NAME, CountryCode, District, Population) VALUES (5002, 'PARVATHI', 'IND', 'BENGALURU', 600000);"
+       ]
+#
+#
+#
+# # Step 5 : execute the query
+ for x in q1:
+     mycursor.execute(x)
+#
+#
+# # Step 6 : commit
+ db.commit()
+#
+# # Step 7 : Close DB
+ db.close()
+#
+ print("successfully inserted ")
